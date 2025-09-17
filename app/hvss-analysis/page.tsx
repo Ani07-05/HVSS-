@@ -139,6 +139,28 @@ export default function Page() {
             It measures the performance overhead (e.g., speed, power consumption) of security features, rather than assigning a
             severity score to vulnerabilities. Therefore, it is not directly comparable in a scoring context like CVSS or HVSS.
           </p>
+          <div className="mt-6 px-6">
+            <h3 className="text-lg font-semibold">Chart Baselines & Specifications</h3>
+            <ul className="mt-2 list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>
+                <strong>CVSS Baseline:</strong> The comparison uses the <strong>Heartbleed</strong> vulnerability (CVE-2014-0160) as its baseline, which has a CVSS v3.1 score of <strong>7.5</strong>.
+              </li>
+              <li>
+                <strong>Illustrative HVSS Scores:</strong>
+                <ul className="list-[circle] list-inside pl-4">
+                  <li>Single Vulnerability Score: <strong>8.2</strong></li>
+                  <li>Cumulative Vulnerability Score: <strong>9.1</strong></li>
+                </ul>
+              </li>
+              <li>
+                <strong>Scenarios Compared:</strong>
+                <ul className="list-[circle] list-inside pl-4">
+                  <li>Scenario 1 (Single): "Memory Dumping"</li>
+                  <li>Scenario 2 (Cumulative): "Memory Dumping" + "Clock-based Attack" + "Wireless Attack"</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </article>
 
         <article className="space-y-4">
