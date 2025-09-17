@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import dynamic from "next/dynamic"
 import ComparisonTable from "@/components/comparison-table"
+import { CvssComparisonChart } from "@/components/charts/cvss-comparison-chart"
 
 // Lazy load heavy components
 const FrameworkAttributesChart = dynamic(() => import("@/components/charts/framework-attributes-chart").then(mod => ({ default: mod.FrameworkAttributesChart })), {
@@ -129,6 +130,15 @@ export default function Page() {
             Here's a side-by-side comparison to help you quickly see the differences:
           </p>
           <ComparisonTable />
+        </article>
+
+        <article className="space-y-4">
+          <CvssComparisonChart />
+          <p className="text-sm text-muted-foreground px-6">
+            <strong>Note on BenchIoT:</strong> BenchIoT is not included in this comparison because it serves a different purpose.
+            It measures the performance overhead (e.g., speed, power consumption) of security features, rather than assigning a
+            severity score to vulnerabilities. Therefore, it is not directly comparable in a scoring context like CVSS or HVSS.
+          </p>
         </article>
 
         <article className="space-y-4">
