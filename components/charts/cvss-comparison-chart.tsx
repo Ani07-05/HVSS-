@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 
 const data = [
@@ -78,8 +78,8 @@ export function CvssComparisonChart() {
             <YAxis domain={[0, 10]} />
             <Tooltip content={<CustomTooltip />} />
             <Legend />
-            <Bar dataKey="CVSS" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="HVSS" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+            <Bar dataKey="CVSS" fill="#8884d8" radius={[0, 0, 0, 0]} />
+            <Bar dataKey="HVSS" fill="#82ca9d" radius={[0, 0, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
