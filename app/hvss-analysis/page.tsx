@@ -1,11 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import dynamic from "next/dynamic"
 import ComparisonTable from "@/components/comparison-table"
 import { CvssComparisonChart } from "@/components/charts/cvss-comparison-chart"
-
-// No lazy-loaded components on this page anymore
 
 export const metadata: Metadata = {
   title: "HVSS vs BenchIoT vs CPS Scoring: Hardware Security Frameworks Compared",
