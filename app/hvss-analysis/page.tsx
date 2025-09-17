@@ -5,13 +5,7 @@ import dynamic from "next/dynamic"
 import ComparisonTable from "@/components/comparison-table"
 import { CvssComparisonChart } from "@/components/charts/cvss-comparison-chart"
 
-// Lazy load heavy components
-const FrameworkAttributesChart = dynamic(() => import("@/components/charts/framework-attributes-chart").then(mod => ({ default: mod.FrameworkAttributesChart })), {
-  loading: () => <div className="h-[340px] flex items-center justify-center bg-muted/20 rounded-none">Loading chart...</div>
-})
-const RigorEaseScatter = dynamic(() => import("@/components/charts/rigor-ease-scatter").then(mod => ({ default: mod.RigorEaseScatter })), {
-  loading: () => <div className="h-[340px] flex items-center justify-center bg-muted/20 rounded-none">Loading chart...</div>
-})
+// No lazy-loaded components on this page anymore
 
 export const metadata: Metadata = {
   title: "HVSS vs BenchIoT vs CPS Scoring: Hardware Security Frameworks Compared",
@@ -106,22 +100,6 @@ export default function Page() {
               </p>
             </div>
           </div>
-        </article>
-
-        <article className="space-y-4" id="charts">
-          <h2 className="text-2xl font-semibold text-pretty">Interactive Comparison Charts</h2>
-          <p className="text-sm leading-relaxed">
-            Use these interactive charts to compare the frameworks side-by-side. Click the checkboxes to show/hide
-            different frameworks and see how they stack up in terms of hardware focus, ease of use, and evaluation rigor.
-          </p>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <FrameworkAttributesChart />
-            <RigorEaseScatter />
-          </div>
-          <p className="text-xs text-muted-foreground">
-            <strong>Pro tip:</strong> Try toggling frameworks on/off to focus on specific comparisons that matter to your project.
-          </p>
         </article>
 
         <article className="space-y-4">
